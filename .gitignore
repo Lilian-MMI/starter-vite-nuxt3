@@ -1,0 +1,12 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+dist
+
+key-pair.pem
+private.key
+public.key
