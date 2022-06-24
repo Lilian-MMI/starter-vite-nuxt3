@@ -1,42 +1,49 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 + TypeScript + Vite starter
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Custom Nuxt 3 starter with TypeScript and Vite. 
+Nuxt 3 is actually at beta stage and this repository will be updated regularly till it is stable released.
 
-## Setup
+## Installation
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+npm/yarn/pnpm install (--shamefully-hoist with pnpm)
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
+Nuxt3 will run on port 3000 by default by running the following command:
 
 ```bash
-npm run dev
+npm/yarn/pnpm run dev
 ```
 
-## Production
+## Packages and plugins
 
-Build the application for production:
+- [pinia](https://pinia.vuejs.org/) for store management
+- [VueUse](https://vueuse.org/) set of composable composition API
+- [UnoCss/preset-icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons) to use icons using class names
+- Middleware authentication plugin using key based authentication with [jose](https://github.com/panva/jose/)
+- [Nitro](https://github.com/unjs/nitro) plugin for server api (mongoosse database is used)
 
+## Dev tools
+- TypeScript
+- Vite - Fire up Vite server automatically
+- pnpm
+- Netlify settings file auto deployement
+
+## Authentication
+
+To use the authentication plugin, you have to generate keys.
+    
 ```bash
-npm run build
+openssl ecparam -genkey -name prime256v1 -noout -out key-pair.pem
+
+openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in key-pair.pem -out private.key
+
+openssl ec -in key-pair.pem -pubout -out public.key
 ```
 
-Locally preview production build:
+## Icons usage
 
-```bash
-npm run preview
-```
+`npm/yarn/pnpm i -D @iconify/[collection-icons]` - You can see this list of icons at [iconify](https://icon-sets.iconify.design/).
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
