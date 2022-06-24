@@ -3,7 +3,7 @@ import * as jose from "jose";
 export default defineEventHandler(async (event) => {
   if (!event.req.url?.startsWith("/api")) return;
 
-  const publicRoutes = ["/api/login", "/api/register"];
+  const publicRoutes = ["/api/auth/login", "/api/auth/register"];
 
   if (publicRoutes.includes(event.req.url)) return;
 

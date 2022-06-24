@@ -6,12 +6,22 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
-  "devDependencies": {
-    "nuxt": "3.0.0-rc.4"
+  "overrides": {
+    "ufo": "^0.8.4"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@iconify-json/geo": "^1.1.1",
+    "@pinia/nuxt": "^0.1.9",
+    "@unocss/nuxt": "^0.39.3",
+    "@unocss/preset-icons": "^0.39.3",
+    "@vueuse/nuxt": "^8.7.5",
     "bcryptjs": "^2.4.3",
     "jose": "^4.8.1",
-    "mongoose": "^6.4.0"
+    "mongoose": "^6.4.0",
+    "nuxt": "3.0.0-rc.4",
+    "pinia": "^2.0.14",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4",
+    "unocss": "^0.39.3"
   }
 }

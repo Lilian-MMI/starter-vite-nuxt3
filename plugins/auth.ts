@@ -9,7 +9,7 @@ export default defineNuxtPlugin(() => {
     provide: {
       auth: {
         login: async (payload: Record<string, any>) => {
-          await $fetch("/api/login", {
+          await $fetch("/api/auth/login", {
             method: "POST",
             body: payload,
           });
@@ -17,7 +17,7 @@ export default defineNuxtPlugin(() => {
         },
 
         register: async (payload: Record<string, any>) => {
-          await $fetch("/api/register", {
+          await $fetch("/api/auth/register", {
             method: "POST",
             body: payload,
           });

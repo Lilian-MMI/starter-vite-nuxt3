@@ -1,4 +1,4 @@
-import { User } from "../models";
+import { User } from "../../models";
 import bcrypt from "bcryptjs";
 
 export default defineEventHandler(async (event) => {

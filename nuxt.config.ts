@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { defineNuxtConfig } from "nuxt";
+import UnocssIcons from "@unocss/preset-icons";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -13,4 +14,21 @@ export default defineNuxtConfig({
   nitro: {
     plugins: ["~/server/db.ts"],
   },
+
+  unocss: {
+    uno: true,
+    icons: true,
+
+    presets: [
+      UnocssIcons({
+        prefix: "i-",
+        scale: 1.5,
+        extraProperties: {
+          display: "inline-block",
+        },
+      }),
+    ],
+  },
+
+  buildModules: ["@pinia/nuxt", "@vueuse/nuxt", "@unocss/nuxt"],
 });
