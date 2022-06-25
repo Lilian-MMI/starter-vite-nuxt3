@@ -1,32 +1,27 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@@/stores";
-import { UseClipboard } from "@@/composables";
 
-const { logMe } = useUserStore();
+const { login } = useUserStore();
 const { currentUser } = storeToRefs(useUserStore());
 
-const { text, copy, copied } = UseClipboard;
+const inputCopy = ref("");
 </script>
 
 <template>
   <div>
-    <Header />
-    <h1>Hello World</h1>
-    <p>This is a simple example of a Vue.js component.</p>
-    <p>user : {{ currentUser ?? "{}" }}</p>
-    <button @click="logMe">UPDATE USER STORE</button>
+    <form @submit.prevent="">
+      <h1>Hello in Nuxt3 starter</h1>
+      <p>user store : {{ currentUser ?? "{}" }}</p>
+      <button @click="login">UPDATE USER STORE</button>
 
-    <br />
+      <hr />
 
-    <span>VUEUSE</span>
-    <button @click="copy()">
-      <span v-if="!copied">Copy {{ text }}</span>
-      <span v-else>Copied!</span>
-    </button>
-
-    <br />
-    <i class="i-geo:turf-union"></i>
+      <span>
+        <input v-model="inputCopy" type="text" />
+        <ButtonCopy :text="inputCopy" />
+      </span>
+    </form>
   </div>
 </template>
 
@@ -34,9 +29,41 @@ const { text, copy, copied } = UseClipboard;
 div {
   padding: 20px;
   background: #fafafa;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &:hover {
     background: #f5f5f5;
   }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+
+  span {
+    display: flex;
+
+    input {
+      border-radius: 8px 0 0 8px;
+    }
+
+    button {
+      border-radius: 0 8px 8px 0;
+      border-left: none;
+    }
+  }
+}
+
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fafafa;
+  cursor: pointer;
 }
 </style>

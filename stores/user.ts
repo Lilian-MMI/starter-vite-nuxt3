@@ -1,12 +1,16 @@
 import { defineStore } from "pinia";
 
+interface IUser {
+  id: number;
+  username: string;
+  email: string;
+}
+
 export const useUserStore = defineStore({
   id: "userStore",
 
   state: () => ({
-    currentUser: null as any,
-    loading: false,
-    error: null,
+    currentUser: null as IUser,
   }),
 
   getters: {
@@ -16,10 +20,11 @@ export const useUserStore = defineStore({
   },
 
   actions: {
-    logMe() {
+    login() {
       this.currentUser = {
         id: 1,
         name: "John Doe",
+        email: "johndoe@email.com",
       };
     },
   },

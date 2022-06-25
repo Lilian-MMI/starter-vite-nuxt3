@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/carbon': ^1.1.5
   '@iconify-json/geo': ^1.1.1
   '@pinia/nuxt': ^0.1.9
   '@unocss/nuxt': ^0.39.3
@@ -16,6 +17,7 @@ specifiers:
   unocss: ^0.39.3
 
 devDependencies:
+  '@iconify-json/carbon': 1.1.5
   '@iconify-json/geo': 1.1.1
   '@pinia/nuxt': 0.1.9_pinia@2.0.14
   '@unocss/nuxt': 0.39.3
@@ -347,6 +349,12 @@ packages:
     resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
     dependencies:
       mime: 3.0.0
+    dev: true
+
+  /@iconify-json/carbon/1.1.5:
+    resolution: {integrity: sha512-ENl8CIEo+7JcRzpJ/58i+dDc3fkNOO7gyNGg4S4JN5cAiVpvltYTVO86Oei7rpl8bKypJ0vk3B0BbzzTw7DclA==}
+    dependencies:
+      '@iconify/types': 1.1.0
     dev: true
 
   /@iconify-json/geo/1.1.1:
