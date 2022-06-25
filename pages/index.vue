@@ -6,6 +6,9 @@ const { login } = useUserStore();
 const { currentUser } = storeToRefs(useUserStore());
 
 const inputCopy = ref("");
+
+const { $auth } = useNuxtApp();
+const logout = () => $auth.logout();
 </script>
 
 <template>
@@ -26,6 +29,11 @@ const inputCopy = ref("");
         <ButtonCopy :text="inputCopy" />
       </span>
     </form>
+
+    <button @click="logout" class="logout">
+      Logout
+      <span class="i-carbon:logout"></span>
+    </button>
   </div>
 </template>
 
@@ -69,5 +77,19 @@ button {
   border-radius: 4px;
   background: #fafafa;
   cursor: pointer;
+
+  &.logout {
+    background: #f7afaf;
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 2rem;
+
+    > span {
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+  }
 }
 </style>
