@@ -3,6 +3,7 @@
   "scripts": {
     "postinstall": "openssl ecparam -genkey -name prime256v1 -noout -out key-pair.pem && openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in key-pair.pem -out private.key && openssl ec -in key-pair.pem -pubout -out public.key",
     "build": "nuxt build",
+    "start": "node .output/server/index.mjs",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
