@@ -18,7 +18,11 @@ const inputCopy = ref("");
       <hr />
 
       <span>
-        <input v-model="inputCopy" type="text" />
+        <input
+          v-model="inputCopy"
+          type="text"
+          placeholder="Type something to copy..."
+        />
         <ButtonCopy :text="inputCopy" />
       </span>
     </form>
