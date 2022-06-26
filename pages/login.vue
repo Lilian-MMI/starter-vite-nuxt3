@@ -30,7 +30,7 @@ async function handleLogin(e: Event) {
           name="username"
           type="text"
           required
-          placeholder="vue"
+          placeholder="user"
           :class="{ error }"
           @focus="error = null"
         />
@@ -41,7 +41,7 @@ async function handleLogin(e: Event) {
           name="password"
           type="password"
           required
-          placeholder="ilovenuxt"
+          placeholder="pwd"
           :class="{ error }"
           @focus="error = null"
         />

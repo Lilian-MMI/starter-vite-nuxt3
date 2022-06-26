@@ -14,12 +14,9 @@ mongoose.connection.on("reconnected", () => {
   console.log("Db reconnected");
 });
 
-mongoose.connect(
-  "mongodb+srv://ducks-master:ducks-password@cluster.edrla.mongodb.net/db_dev?retryWrites=true&w=majority",
-  function (err) {
-    if (err) console.log(err);
-  }
-);
+mongoose.connect(process.env.MONGODB_URI, function (err) {
+  if (err) console.log(err);
+});
 
 export default (req, res) =>
   mongoose.connection.readyState == 1 ? ":)" : ":(";

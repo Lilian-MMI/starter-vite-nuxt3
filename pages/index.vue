@@ -74,7 +74,7 @@ form {
 button {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
   background: #fafafa;
   cursor: pointer;
 

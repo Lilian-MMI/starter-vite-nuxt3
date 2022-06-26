@@ -43,6 +43,14 @@ openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in key-pair.pem -out pri
 openssl ec -in key-pair.pem -pubout -out public.key
 ```
 
+## MongoDB
+
+It provides a connection to a mongodb database. To use it, you have to set the URI connection string in a .env file. You can reuse the .env.example file as a template.
+
+```bash
+MONGODB_URI=mongodb://localhost:27017/nuxt-ts-vite-starter
+```
+
 ## Icons usage
 
 `npm/yarn/pnpm i -D @iconify/[collection-icons]` - You can see this list of icons at [iconify](https://icon-sets.iconify.design/).
